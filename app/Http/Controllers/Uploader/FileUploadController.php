@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class FileUploadController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        // TODO: Implement __invoke() method.
+        $file = $request->file('file');
+        $fileName = $file->getClientOriginalName();
+        $location = 'uploadedFiles';
+        $file->move($location, $fileName);
+        $filePath = public_path($location . '/' . $fileName);
     }
 }
