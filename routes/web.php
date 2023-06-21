@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Uploader\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,4 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', HomeController::class)->name('home');
+Route::post('/upload', FileUploadController::class)->name('upload.file');
