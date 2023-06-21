@@ -42,7 +42,7 @@ class FileUploadController extends Controller
         $fileName = $file->getClientOriginalName();
         $location = 'uploadedFiles';
         $file->move($location, $fileName);
-        
+
         return public_path($location . '/' . $fileName);
     }
 }
